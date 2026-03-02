@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #020617;
+  color: #e2e8f0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.3), transparent 30%),
+    radial-gradient(circle at 85% 0%, rgba(14, 165, 233, 0.22), transparent 35%),
+    radial-gradient(circle at 80% 100%, rgba(245, 158, 11, 0.18), transparent 28%),
+    linear-gradient(140deg, #0b1225 0%, #1e1b4b 35%, #111827 70%, #020617 100%);
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+html.light body::before {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(99, 102, 241, 0.14), transparent 34%),
+    radial-gradient(circle at 85% 0%, rgba(14, 165, 233, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 100%, rgba(245, 158, 11, 0.12), transparent 28%),
+    linear-gradient(140deg, #eef2ff 0%, #f5f3ff 38%, #f8fafc 100%);
+}
+
+html,
+body,
+a,
+button,
+input,
+textarea,
+select {
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+@layer components {
+  .app-container {
+    @apply mx-auto w-full max-w-7xl px-4 md:px-8;
+  }
+
+  .glass {
+    @apply border border-white/20 bg-white/10 shadow-glass backdrop-blur-xl;
+  }
+
+  html.light .glass {
+    @apply border-slate-300/70 bg-white/70;
+  }
+
+  .section-title {
+    @apply font-heading text-3xl font-bold tracking-tight text-white md:text-4xl;
+  }
+
+  html.light .section-title {
+    @apply text-slate-900;
+  }
+
+  .section-subtitle {
+    @apply mt-2 max-w-2xl text-sm leading-7 text-slate-300 md:text-base;
+  }
+
+  html.light .section-subtitle {
+    @apply text-slate-600;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Destina AI",
+  "short_name": "Destina",
+  "description": "Smart Travel Planner",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1225",
+  "theme_color": "#6366F1",
+  "icons": [
+    {
+      "src": "/pwa.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
